@@ -8,7 +8,7 @@ on:
 env:
   # Among other things, opts out of Turborepo telemetry. See https://consoledonottrack.com/.
   DO_NOT_TRACK: '1'
-  NODE_VERSION: 20
+  BUN_VERSION: '1.3.2'
   CODAMA_VERSION: 1.x
   SOLANA_VERSION: 2.1.9
 
@@ -20,23 +20,27 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Compile JS and types
-        run: pnpm run build
+        run: bun run build
 
       - name: Check linting
-        run: pnpm run lint
+        run: bun run lint
 
   tests:
     name: Test
@@ -50,20 +54,24 @@ jobs:
         with:
           version: ${{ env.SOLANA_VERSION }}
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Build and run tests
-        run: pnpm run test
+        run: bun run test
 
       - name: Ensure working directory is clean
         run: |
@@ -84,17 +92,21 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish
         id: changesets
@@ -102,7 +114,7 @@ jobs:
         with:
           commit: '[${{ env.CODAMA_VERSION }}] Publish packages'
           title: '[${{ env.CODAMA_VERSION }}] Publish packages'
-          publish: pnpm publish-packages
+          publish: bun run publish-packages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

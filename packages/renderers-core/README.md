@@ -12,7 +12,7 @@ This package provides the core utility for generating clients from Codama IDLs. 
 ## Installation
 
 ```sh
-pnpm install @codama/renderers-core
+bun add @codama/renderers-core
 ```
 
 > [!NOTE]

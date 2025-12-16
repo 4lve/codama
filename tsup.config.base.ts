@@ -1,7 +1,6 @@
-import { env } from 'node:process';
-
 import browsersListToEsBuild from 'browserslist-to-esbuild';
 import { Format, Options as TsupConfig } from 'tsup';
+import { getPackageVersion } from './vitest.config.base.mjs';
 
 type Platform = 'browser' | 'node' | 'react-native';
 
@@ -21,7 +20,7 @@ export function getBuildConfig(options: BuildOptions): TsupConfig {
             __NODEJS__: `${platform === 'node'}`,
             __REACTNATIVE__: `${platform === 'react-native'}`,
             __TEST__: 'false',
-            __VERSION__: `"${env.npm_package_version}"`,
+            __VERSION__: `"${getPackageVersion()}"`,
         },
         entry: [`./src/index.ts`],
         esbuildOptions(options, context) {

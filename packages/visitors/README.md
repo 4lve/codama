@@ -12,14 +12,14 @@ This package offers various visitors for Codama IDLs to traverse and manipulate 
 ## Installation
 
 ```sh
-pnpm install @codama/visitors
+bun add @codama/visitors
 ```
 
 > [!NOTE]
 > This package is included in the main [`codama`](../library) package. Meaning, you already have access to its content if you are installing Codama this way.
 >
 > ```sh
-> pnpm install codama
+> bun add codama
 > ```
 
 ## Understanding visitors

@@ -9,5 +9,4 @@ test-ledger/
 target/
 CHANGELOG.md
 
-pnpm-lock.yaml
-pnpm-workspace.yaml
+bun.lock

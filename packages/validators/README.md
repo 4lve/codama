@@ -12,14 +12,14 @@ This package offers a set of validation rules for Codama IDLs to ensure that the
 ## Installation
 
 ```sh
-pnpm install @codama/validators
+bun add @codama/validators
 ```
 
 > [!NOTE]
 > This package is included in the main [`codama`](../library) package. Meaning, you already have access to its content if you are installing Codama this way.
 >
 > ```sh
-> pnpm install codama
+> bun add codama
 > ```
 
 ## Types

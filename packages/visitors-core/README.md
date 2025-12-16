@@ -12,15 +12,15 @@ This package provides core interfaces and utilities for creating visitors for Co
 ## Installation
 
 ```sh
-pnpm install @codama/visitors-core
+bun add @codama/visitors-core
 ```
 
 > [!NOTE]
 > This package is included in the [`@codama/visitors`](../visitors) package and in the main [`codama`](../library) library. Meaning, you already have access to its content if you are installing Codama in one of these ways.
 >
 > ```sh
-> pnpm install @codama/visitors
-> pnpm install codama
+> bun add @codama/visitors
+> bun add codama
 > ```
 
 ## Getting started with visitors

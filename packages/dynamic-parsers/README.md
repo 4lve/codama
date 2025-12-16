@@ -12,7 +12,7 @@ This package provides a set of helpers that, given any Codama IDL, dynamically i
 ## Installation
 
 ```sh
-pnpm install @codama/dynamic-parsers
+bun add @codama/dynamic-parsers
 ```
 
 > [!NOTE]

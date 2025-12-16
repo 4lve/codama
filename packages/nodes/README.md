@@ -12,14 +12,14 @@ This package defines the various nodes that make up the Codama IDL. It provides 
 ## Installation
 
 ```sh
-pnpm install @codama/nodes
+bun add @codama/nodes
 ```
 
 > [!NOTE]
 > This package is included in the main [`codama`](../library) package. Meaning, you already have access to its content if you are installing Codama this way.
 >
 > ```sh
-> pnpm install codama
+> bun add codama
 > ```
 
 ## All available nodes

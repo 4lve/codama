@@ -12,13 +12,13 @@ This package is the type-only version of the `@codama/nodes` package. Check out 
 ## Installation
 
 ```sh
-pnpm install @codama/node-types
+bun add @codama/node-types
 ```
 
 > [!NOTE]
 > This package is included in the [`@codama/nodes`](../nodes) package and in the main [`codama`](../library) library. Meaning, you already have access to its content if you are installing Codama in one of these ways.
 >
 > ```sh
-> pnpm install @codama/nodes
-> pnpm install codama
+> bun add @codama/nodes
+> bun add codama
 > ```

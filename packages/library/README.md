@@ -12,7 +12,7 @@ This package is the main library for Codama. It re-exports most of the other pac
 ## Installation
 
 ```sh
-pnpm install codama
+bun add codama
 ```
 
 ## Packages included

@@ -39,7 +39,7 @@
         "dev": "vitest --project node",
         "lint": "eslint . && prettier --check .",
         "lint:fix": "eslint --fix . && prettier --write .",
-        "test": "pnpm test:types && pnpm test:treeshakability && pnpm test:unit",
+        "test": "bun run test:types && bun run test:treeshakability && bun run test:unit",
         "test:treeshakability": "for file in dist/index.*.mjs; do agadoo $file; done",
         "test:types": "tsc --noEmit",
         "test:unit": "vitest run"

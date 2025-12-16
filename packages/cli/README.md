@@ -16,7 +16,7 @@ Note that, whilst the CLI code is located in the `@codama/cli` package, the CLI 
 Once you have the `codama` package installed, you can use the CLI using the `codama` binary.
 
 ```sh
-pnpm install codama
+bun add codama
 codama --help
 ```
 

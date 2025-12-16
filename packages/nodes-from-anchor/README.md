@@ -12,7 +12,7 @@ This package converts Anchor IDLs from various versions into Codama IDLs.
 ## Installation
 
 ```sh
-pnpm install @codama/nodes-from-anchor
+bun add @codama/nodes-from-anchor
 ```
 
 > [!NOTE]

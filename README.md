@@ -38,7 +38,7 @@ A Codama IDL can be used to:
 To get started with Codama, simply install `codama` to your project and run the `init` command like so:
 
 ```sh
-pnpm install codama
+bun add codama
 codama init
 ```
 
@@ -94,7 +94,7 @@ Note that if an external visitor in your script isn’t installed locally, you w
 ❯ codama run my-script
 
 ▲ Your script requires additional dependencies.
-▲ Install command: pnpm install my-external-visitor
+▲ Install command: bun add my-external-visitor
 ? Install dependencies? › (Y/n)
 ```
 

@@ -12,7 +12,7 @@ This package provides a set of helpers that provide `Codecs` for Codama nodes th
 ## Installation
 
 ```sh
-pnpm install @codama/dynamic-codecs
+bun add @codama/dynamic-codecs
 ```
 
 > [!NOTE]

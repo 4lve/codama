@@ -12,14 +12,14 @@ This package defines a `CodamaError` class that accepts a specific error code an
 ## Installation
 
 ```sh
-pnpm install @codama/errors
+bun add @codama/errors
 ```
 
 > [!NOTE]
 > This package is included in the main [`codama`](../library) package. Meaning, you already have access to its content if you are installing Codama this way.
 >
 > ```sh
-> pnpm install codama
+> bun add codama
 > ```
 
 ## Reading error messages
