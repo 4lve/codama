@@ -11,7 +11,7 @@ export function getPackageVersion(): string {
     if (!packageJson.version) {
         throw new Error('Failed to get package version');
     }
-    return packageJson.version
+    return packageJson.version;
 }
 
 export function getVitestConfig(platform: Platform) {
